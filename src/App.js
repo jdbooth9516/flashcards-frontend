@@ -1,20 +1,17 @@
 import React, {useState, useEffect} from 'react';
 import Categories from './components/categories/categories';
+import Navbar from './components/navbar/Navbar'
+
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <div className='navBar'>   
-        <h1> Hi There</h1>
+      <div className='navbar-outer'>   
+        <Navbar />
       </div>
       <div className="main-area">
-        <div className="cat-container">   
-          < Categories />
-        </div>
-        <div className='card-container'>
-          
-        </div>
+        < Categories />
       </div>
     </div>
   );

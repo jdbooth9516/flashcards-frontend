@@ -1,0 +1,15 @@
+button { 
+    margin-left: 1vw;
+}
+
+.navbar-inner { 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttons { 
+    margin-left: 2vw;
+}
+
