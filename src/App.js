@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react';
 import Categories from './components/categories/categories';
 import Navbar from './components/navbar/Navbar'
 
+
+
 import './App.css';
 
 function App() {

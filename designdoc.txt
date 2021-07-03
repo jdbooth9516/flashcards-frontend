@@ -1,0 +1,5 @@
+Wireframe : https://design.penpot.app/#/view/966c7b30-d9b2-11eb-97a9-7472ffaca84b/966c7b31-d9b2-11eb-97a9-7472ffaca84b?token=haUr_Dyhc7GLaDPSIF6S4w&index=0
+
+ERD: https://gitmind.com/app/flowchart/d282719574
+
+KANBAN: https://www.notion.so/2b24d9f9bc3e4740bd95772a0a7a71e1?v=1548d1c0c07d44af8fe760597918f958
