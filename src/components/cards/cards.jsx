@@ -39,6 +39,7 @@ export default function Cards(props) {
         ) : null}
         <div>
           <div>
+            {singleVisible ? (
             <button
               onClick={() => {
                 setIndex(collectionIndex - 1);
@@ -46,6 +47,7 @@ export default function Cards(props) {
             >
               Prev
             </button>
+            ): null }
           </div>
           {singleVisible ? (
             <div>
@@ -70,6 +72,7 @@ export default function Cards(props) {
           ) : null}
         </div>
         <div>
+          {singleVisible ? (
           <button
             onClick={() => {
               // need to make this into conditional that will loop
@@ -78,6 +81,7 @@ export default function Cards(props) {
           >
             Next
           </button>
+          ): null }
         </div>
       </div>
     );
