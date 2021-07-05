@@ -3,9 +3,12 @@
   flex-direction: row;
 }
 
+.cat-title { 
+  margin-bottom: 4vh;
+}
 
 .cat-container {
-  background-color: rgb(175, 175, 175);
+  background-color: rgb(36, 36, 36);
   margin-left: 2vw;
   width: 30vw;
   height: inherit;
@@ -15,11 +18,18 @@
 }
 
 .card-container { 
-  background-color: rgb(175, 175, 175);
+  background-color: rgb(36, 36, 36);
   margin: 0  2vw;
   width: 80vw;
   height: inherit;
   min-width: 60vw;
   min-height: 50vh;
   border-radius: 3px;
+}
+
+.CC-btn { 
+  border: 0;
+  background-color: rgb(36, 36, 36);
+  color: rgb(0, 217, 255);
+  font-size: 1.2em;
 }

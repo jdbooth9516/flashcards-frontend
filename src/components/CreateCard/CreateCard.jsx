@@ -14,6 +14,7 @@ const CreateCard = (props) => {
         const response = await axios.post("http://127.0.0.1:8000/cards/", values);
         console.log(props.categories[values.category - 1 ]);
         UpdateCount(props.categories[values.category - 1]); 
+        
       } catch (error) {
         alert(error)
         return
@@ -21,6 +22,7 @@ const CreateCard = (props) => {
       alert(`New card has been add to the Category`)
     };
       addCardToDatabase(values);
+      props.hideCreate()
     }
 
     return (

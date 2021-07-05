@@ -1,0 +1,27 @@
+.card-container {
+ max-width: 80vw;
+ display: flex;
+ flex-direction: row;
+}
+
+.cards{ 
+    background-color: aliceblue;
+    color:rgb(49, 49, 49);
+    height: 15vh; 
+    min-width: 18vw;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+    margin: 1vh 1vw;
+}
+
+.card-tile { 
+    justify-content: space-around;
+    text-align: center;
+    align-content: center;
+    margin: 1vh 1vw;
+}
+
+.card-title { 
+    padding-top: 2vh;
+}

@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { SingleCard } from '../SingleCard/SingleCard';
-import React, {useState, useEffect}from 'react'
+import React, {useState, useEffect}from 'react';
+import "./cards.css"
 
 export default function Cards(props) {
 
@@ -16,13 +17,14 @@ export default function Cards(props) {
             setCards(response.data)
         }
         getData();
-    }, [props.categoryId]);
+    }, [cards, props.categoryId]);
 
     return (
       <div>
         {visible ? (
-          <div>
+          <div className="card-container">
             {cards.map((card, index) => (
+              <div className="cards">
               <div
                 onClick={() => {
                   setVisible(false);
@@ -32,7 +34,9 @@ export default function Cards(props) {
                 }}
                 className="card-tile"
               >
-                <p>{card.question}</p>
+                <h4 className="card-title">{card.question}</h4>
+                <p>{card.answer}</p>
+              </div>
               </div>
             ))}
           </div>

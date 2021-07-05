@@ -15,13 +15,19 @@ export default function Categories() {
     async function getData() {
       const response = await axios.get("http://127.0.0.1:8000/categories/");
       setCategories(response.data);
+      
     }
     getData();
-  }, []);
+  }, [categories]);
+
+  function hideCreate() { 
+    setCreateVisible(false)
+  }
 
   return (
     <div className="main-container">
       <div className="cat-container">
+        <h3 className="cat-title">Catagories</h3>
         {categories.map((category, index) => (
           <div>
             {active === index && (
@@ -54,8 +60,8 @@ export default function Categories() {
         ) : null}
       </div>
       <div>
-        <button onClick={() => setCreateVisible(true)}>create card</button>
-        {createVisible ? <CreateCard categories={categories} /> : null}
+        <button className="CC-btn" onClick={() => setCreateVisible(true)}>Create Card</button>
+        {createVisible ? <CreateCard categories={categories} hideCreate={hideCreate}/> : null}
       </div>
     </div>
   );

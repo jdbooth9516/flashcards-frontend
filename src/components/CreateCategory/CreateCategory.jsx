@@ -15,6 +15,7 @@ export const CreateCategory = () => {
                 alert(error)
                 return
             }
+            window.location.reload()
             alert(`New category has been created`)
         };
         addCatToDatabase(values);

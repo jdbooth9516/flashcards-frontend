@@ -11,7 +11,7 @@ export default function Navbar(props) {
           <h1> FlashCards </h1>
         </div>
         <div className="buttons">
-          <button onClick={() => {setVisible(true)}}>create categories</button>
+          <button className="nav-btn" onClick={() => {setVisible(true)}}>Create Categories</button>
           {visible ? <CreateCategory /> : null}
         </div>
         <div></div>
