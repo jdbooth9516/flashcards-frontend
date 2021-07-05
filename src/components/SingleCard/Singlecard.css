@@ -1,0 +1,11 @@
+.card-body {
+    display: flex; 
+    flex-direction: column;
+    color: rgb(49, 49, 49);
+    background-color: aliceblue;
+    min-height: 25vh;
+    min-width: 50vh;
+    margin: 0 2vw;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import "./Singlecard.css"
 
 
 
@@ -25,7 +26,7 @@ export const SingleCard = (props) => {
     }, [props.cardId])
 
     return (
-      <div onClick={() => {
+      <div className='card-body' onClick={() => {
           setQuestionVisible(!questionVisible);
           setAnswerVisible(!answerVisible)
       }}>

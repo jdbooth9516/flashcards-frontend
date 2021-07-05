@@ -41,7 +41,7 @@ export default function Cards(props) {
               >
                 {showAnswer !== index && (<h4 className="card-title">{card.question}</h4>
               )}
-              {showAnswer === index && (<p className="card-answer">{card.answer}</p>
+              {showAnswer === index && (<p className="card-answer" style={{paddingTop: '3.5vh'}}>{card.answer}</p>
               )}
               
               </div>
@@ -49,10 +49,10 @@ export default function Cards(props) {
             ))}
           </div>
         ) : null}
-        <div>
+        <div className='single-card'>
           <div>
             {singleVisible ? (
-            <button
+            <button className='index-btn'
               onClick={() => {
                 setIndex(collectionIndex - 1);
               }}
@@ -61,19 +61,7 @@ export default function Cards(props) {
             </button>
             ): null }
           </div>
-          {singleVisible ? (
-            <div>
-              <button
-                // need to make this into conditional that will loop
-                onClick={() => {
-                  setVisible(true);
-                  setSingleVisible(false);
-                }}
-              >
-                X
-              </button>
-            </div>
-          ) : null}
+          <div>
           {singleVisible ? (
             <SingleCard
               categoryId={props.categoryId}
@@ -85,7 +73,7 @@ export default function Cards(props) {
         </div>
         <div>
           {singleVisible ? (
-          <button
+          <button className='index-btn'
             onClick={() => {
               // need to make this into conditional that will loop
               setIndex(collectionIndex + 1);
@@ -94,6 +82,20 @@ export default function Cards(props) {
             Next
           </button>
           ): null }
+          </div>
+          {singleVisible ? (
+            <div>
+              <button className="del-btn"
+                // need to make this into conditional that will loop
+                onClick={() => {
+                  setVisible(true);
+                  setSingleVisible(false);
+                }}
+              >
+                X
+              </button>
+            </div>
+          ) : null}
         </div>
       </div>
     );
