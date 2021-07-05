@@ -59,7 +59,7 @@ export default function Categories() {
           <Cards categoryId={id} total={categories[id - 1].total_cards} />
         ) : null}
       </div>
-      <div>
+      <div className="createcard-ctn">
         <button className="CC-btn" onClick={() => setCreateVisible(true)}>Create Card</button>
         {createVisible ? <CreateCard categories={categories} hideCreate={hideCreate}/> : null}
       </div>

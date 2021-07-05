@@ -9,6 +9,7 @@ export default function Cards(props) {
     const [visible, setVisible] = useState(true)
     const [singleVisible, setSingleVisible] = useState(false)
     const [selectedCard, setSelected] = useState(0)
+    const [showAnswer, setShowAnswer] = useState(null)
     const [collectionIndex, setIndex] = useState(0)
      
     useEffect(() => {
@@ -24,18 +25,25 @@ export default function Cards(props) {
         {visible ? (
           <div className="card-container">
             {cards.map((card, index) => (
-              <div className="cards">
-              <div
+              <div className="cards"
+              
                 onClick={() => {
                   setVisible(false);
                   setSelected(card.id);
                   setSingleVisible(true);
                   setIndex(index + 1);
                 }}
+                onMouseEnter={() => setShowAnswer(index)}
+                onMouseLeave={() => setShowAnswer(null)}
+                >
+              <div
                 className="card-tile"
               >
-                <h4 className="card-title">{card.question}</h4>
-                <p>{card.answer}</p>
+                {showAnswer !== index && (<h4 className="card-title">{card.question}</h4>
+              )}
+              {showAnswer === index && (<p className="card-answer">{card.answer}</p>
+              )}
+              
               </div>
               </div>
             ))}
