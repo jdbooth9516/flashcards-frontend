@@ -1,6 +1,7 @@
 import React from 'react'
 import useForm from '../../useForm'
 import axios from 'axios';
+import "./UpdateCard.css";
 
 
 const UpdateCard = (props) => {
@@ -24,8 +25,8 @@ const UpdateCard = (props) => {
     }
 
     return (
-      <div className="form-container">
-        <form onSubmit={handleSubmit}>
+      <div>
+        <form className="form-container"onSubmit={handleSubmit}>
         <label style={{display: 'none'}}>
             Category:
             <input
@@ -44,8 +45,10 @@ const UpdateCard = (props) => {
               onChange={handleChange}
               value={values.question}
               required={true}
+              className="edit-form"
             />
           </label>
+          
           <label>
             Answer:
             <input
@@ -54,9 +57,11 @@ const UpdateCard = (props) => {
               onChange={handleChange}
               value={values.answer}
               required={true}
+              className="edit-form"
             />
           </label>
-          <button type="submit">Update Card</button>
+  
+          <button className='edit-form-btn' type="submit">Update Card</button>
         </form>
       </div>
     );

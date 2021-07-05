@@ -42,15 +42,19 @@ export const SingleCard = (props) => {
             <h3>{card.answer}</h3>
           </div>
         ) : null}
-        <div className="index">
-          <p>
-            {props.cardIndex}/{props.total}
-          </p>
+        <div className='card-options'>
+          <div className="index">
+            <p>
+              {props.cardIndex}/{props.total}
+            </p>
+          </div>
+          <div> 
+            <button className="edit-btn" onClick={() => setUpdateVisible(true)}>Edit card
+            </button>
+          </div>
         </div>
-        <div> 
-          <button onClick={() => setUpdateVisible(true)}>Edit card
-          </button>
-          {updateVisible ? (<UpdateCard categoryId={props.categoryId} cardId={props.cardId} updateVisible={setUpdateVisible}/> ): null }
+        <div>
+            {updateVisible ? (<UpdateCard categoryId={props.categoryId} cardId={props.cardId} updateVisible={setUpdateVisible}/> ): null }
         </div>
       </div>
     );

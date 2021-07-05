@@ -1,0 +1,18 @@
+.form-container { 
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.edit-form { 
+    margin: .5vh 0;
+}
+
+.edit-form-btn { 
+    border: 0;
+    color: rgb(13, 212, 39);
+    background-color: aliceblue;
+    font-size: 1em;
+    margin: .5vh 0;
+    padding: .5vh 0;
+}
