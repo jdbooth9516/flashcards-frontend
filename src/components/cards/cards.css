@@ -9,6 +9,7 @@
     align-items: center;
     margin-top: 2vh;
     padding-top: 3vh;
+    box-shadow: rgb(134, 134, 134) .1em .2em .5em 0;
 }
 
 .card-tile { 

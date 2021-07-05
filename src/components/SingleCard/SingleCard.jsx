@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import UpdateCard from '../UpdateCard/UpdateCard'
 import "./Singlecard.css"
 
 
@@ -9,6 +10,7 @@ export const SingleCard = (props) => {
     const [card, setCard] = useState({});
     const [questionVisible, setQuestionVisible] = useState(true);
     const [answerVisible, setAnswerVisible] = useState(false);
+    const [updateVisible, setUpdateVisible] = useState(false);
 
     useEffect(() => {
         async function getCard()  {
@@ -44,6 +46,11 @@ export const SingleCard = (props) => {
           <p>
             {props.cardIndex}/{props.total}
           </p>
+        </div>
+        <div> 
+          <button onClick={() => setUpdateVisible(true)}>Edit card
+          </button>
+          {updateVisible ? (<UpdateCard categoryId={props.categoryId} cardId={props.cardId} updateVisible={setUpdateVisible}/> ): null }
         </div>
       </div>
     );

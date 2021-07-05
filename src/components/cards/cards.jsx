@@ -18,7 +18,7 @@ export default function Cards(props) {
             setCards(response.data)
         }
         getData();
-    }, [cards, props.categoryId]);
+    }, [ props.categoryId]);
 
     return (
       <div>

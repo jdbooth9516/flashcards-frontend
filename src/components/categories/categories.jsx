@@ -18,7 +18,7 @@ export default function Categories() {
       
     }
     getData();
-  }, [categories]);
+  }, []);
 
   function hideCreate() { 
     setCreateVisible(false)

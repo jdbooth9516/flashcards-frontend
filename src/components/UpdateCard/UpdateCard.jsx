@@ -2,7 +2,8 @@ import React from 'react'
 import useForm from '../../useForm'
 import axios from 'axios';
 
-const UpdateCard = () => {
+
+const UpdateCard = (props) => {
 
     const { values, handleChange, handleSubmit } = useForm(() => {
         updateInfo(values)
@@ -11,19 +12,30 @@ const UpdateCard = () => {
     function updateInfo(values) { 
         async function updateCardInDatabase(values) { 
             try { 
-                const response = await axios.put("http://127.0.0.1:8000/cards_category/2/1/", values);
+                const response = await axios.put(`http://127.0.0.1:8000/cards_category/${props.categoryId}/${props.cardId}/`, values);
             } catch (error) { 
                 alert('error')
                 return
             }
-            alert(`New card has been added to the Category`)
+            alert(` card has updated`)
         }
         updateCardInDatabase(values);
+        window.location.reload()
     }
 
     return (
       <div className="form-container">
         <form onSubmit={handleSubmit}>
+        <label style={{display: 'none'}}>
+            Category:
+            <input
+              type="text"
+              name="category"
+              onChange={handleChange}
+              value={values.category = props.categoryId}
+              required={true}
+            />
+          </label>
           <label>
             Question:
             <input
@@ -44,7 +56,7 @@ const UpdateCard = () => {
               required={true}
             />
           </label>
-          <button type="submit">Create Card</button>
+          <button type="submit">Update Card</button>
         </form>
       </div>
     );
