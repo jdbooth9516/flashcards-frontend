@@ -19,10 +19,14 @@ export default function Categories() {
       
     }
     getData();
-  }, []);
+  }, [createVisible]);
 
   function hideCreate() { 
     setCreateVisible(false)
+    setCardsVisible(false)
+    setTimeout(() => {
+      setCardsVisible(true)
+    }, 100);
   }
 
 
@@ -58,7 +62,7 @@ export default function Categories() {
       </div>
       <div className="card-container">
         {cardsVisible ? (
-          <Cards categoryId={id} total={categories[id - 1].total_cards}/>
+          <Cards category={categories[id - 1]} categoryId={id} total={categories[id - 1].total_cards}/>
         ) : null}
       </div>
       <div className="createcard-ctn">

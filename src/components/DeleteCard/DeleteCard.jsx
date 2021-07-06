@@ -1,24 +1,27 @@
 import axios from 'axios';
 import React from 'react'
+import DeleteCount from '../DeleteCount/DeleteCount'
+import Cards from '../cards/cards';
 
-export const DeleteCard = (cat, card) => {
+export const DeleteCard = (cat, cardId, category) => {
     function confirmation () {
         const reply = window.confirm("Confirm Delete")
         if (reply) { 
-            handleDelete(cat, card)
+            handleDelete(cat, cardId, category)
         }
     }
 
-    function handleDelete(cat, card) {
-        async function deleteCard(cat,card) { 
+    function handleDelete(cat, cardId, category) {
+        async function deleteCard(cat,cardId) { 
             try { 
-                const response = await axios.delete(`http://127.0.0.1:8000/cards_category/${cat}/${card}/`)
-                alert('card has been deleted')
+                const response = await axios.delete(`http://127.0.0.1:8000/cards_category/${cat}/${cardId}/`)
+                DeleteCount(category)
+                window.location.reload()
             }   catch (error) {
                 alert(error)
             }
         }
-        deleteCard(cat,card)
+        deleteCard(cat,cardId)
     }
 
     confirmation()

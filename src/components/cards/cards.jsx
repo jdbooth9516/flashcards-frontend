@@ -75,6 +75,7 @@ export default function Cards(props) {
           <div>
           {singleVisible ? (
             <SingleCard
+              category={props.category}
               categoryId={props.categoryId}
               cardIndex={collectionIndex}
               cardId={cards[collectionIndex - 1].id}

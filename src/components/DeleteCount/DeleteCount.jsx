@@ -1,13 +1,13 @@
 import axios from 'axios'
 import React from 'react'
 
-const UpdateCount = (props) => {
+const DeleteCount = (props) => {
    
     async function UpdateTotalCard() {
         const body =  { 
             id: `${props.id}`,
             name: `${props.name}`,
-            total_cards: `${props.total_cards + 1}`
+            total_cards: `${props.total_cards - 1}`
         }
         try {
         const response = await axios.put(`http://127.0.0.1:8000/category/${props.id}/`, body)
@@ -26,4 +26,4 @@ const UpdateCount = (props) => {
     )
 }
 
-export default UpdateCount;
+export default DeleteCount;

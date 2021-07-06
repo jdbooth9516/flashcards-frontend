@@ -67,7 +67,7 @@ export const SingleCard = (props) => {
           </button>
           <button
             className="delete-btn"
-            onClick={() => DeleteCard(props.categoryId, props.cardId)}
+            onClick={() => DeleteCard(props.categoryId, props.cardId, props.category)}
           >
             DEL
           </button>
