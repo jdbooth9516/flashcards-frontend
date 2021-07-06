@@ -10,6 +10,7 @@ export default function Categories() {
   const [createVisible, setCreateVisible] = useState(false);
   const [active, setActive] = useState(null);
   const [id, setId] = useState(0);
+  
 
   useEffect(() => {
     async function getData() {
@@ -23,6 +24,7 @@ export default function Categories() {
   function hideCreate() { 
     setCreateVisible(false)
   }
+
 
   return (
     <div className="main-container">
@@ -56,7 +58,7 @@ export default function Categories() {
       </div>
       <div className="card-container">
         {cardsVisible ? (
-          <Cards categoryId={id} total={categories[id - 1].total_cards} />
+          <Cards categoryId={id} total={categories[id - 1].total_cards}/>
         ) : null}
       </div>
       <div className="createcard-ctn">

@@ -21,7 +21,9 @@ const UpdateCard = (props) => {
             alert(` card has updated`)
         }
         updateCardInDatabase(values);
-        window.location.reload()
+        props.questionVisible(true)
+        props.updateVisible(false);
+        props.update()
     }
 
     return (

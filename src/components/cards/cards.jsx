@@ -13,6 +13,7 @@ export default function Cards(props) {
     const [showAnswer, setShowAnswer] = useState(null)
     const [fadeTrigger, setFadeTrigger] = useState(null)
     const [collectionIndex, setIndex] = useState(null)
+    const [update, setUpdate] = useState(false)
      
     useEffect(() => {
         async function getData() {
@@ -20,7 +21,16 @@ export default function Cards(props) {
             setCards(response.data)
         }
         getData();
-    }, [props.categoryId]);
+    }, [props.categoryId, update]);
+
+    function updateCards() { 
+      setUpdate(true);
+      setSingleVisible(false);
+      setTimeout(() => {
+        setUpdate(false);
+        setSingleVisible(true);
+      }, 200);
+    }
 
     return (
       <div>
@@ -69,6 +79,7 @@ export default function Cards(props) {
               cardIndex={collectionIndex}
               cardId={cards[collectionIndex - 1].id}
               total={props.total}
+              update={updateCards}
             />
           ) : null}
         </div>
