@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React from 'react'
 import DeleteCount from '../DeleteCount/DeleteCount'
-import Cards from '../cards/cards';
+
 
 export const DeleteCard = (cat, cardId, category) => {
     function confirmation () {

@@ -19,7 +19,6 @@ const CreateCard = (props) => {
         alert(error)
         return
       }
-      alert(`New card has been add to the Category`)
     };
       addCardToDatabase(values);
       props.hideCreate()

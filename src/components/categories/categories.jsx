@@ -26,7 +26,7 @@ export default function Categories() {
     setCardsVisible(false)
     setTimeout(() => {
       setCardsVisible(true)
-    }, 100);
+    }, 400);
   }
 
 
