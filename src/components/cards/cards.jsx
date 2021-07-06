@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { SingleCard } from '../SingleCard/SingleCard';
 import React, {useState, useEffect}from 'react';
+import { Fade } from '@material-ui/core';
 import "./cards.css"
 
 export default function Cards(props) {
@@ -10,7 +11,8 @@ export default function Cards(props) {
     const [singleVisible, setSingleVisible] = useState(false)
     const [selectedCard, setSelected] = useState(0)
     const [showAnswer, setShowAnswer] = useState(null)
-    const [collectionIndex, setIndex] = useState(0)
+    const [fadeTrigger, setFadeTrigger] = useState(null)
+    const [collectionIndex, setIndex] = useState(null)
      
     useEffect(() => {
         async function getData() {
@@ -18,7 +20,7 @@ export default function Cards(props) {
             setCards(response.data)
         }
         getData();
-    }, [ props.categoryId]);
+    }, [props.categoryId]);
 
     return (
       <div>
@@ -33,15 +35,14 @@ export default function Cards(props) {
                   setSingleVisible(true);
                   setIndex(index + 1);
                 }}
-                onMouseEnter={() => setShowAnswer(index)}
-                onMouseLeave={() => setShowAnswer(null)}
+                onMouseEnter={() => {setShowAnswer(index); setFadeTrigger(index)}}
+                onMouseLeave={() => {setShowAnswer(null); setFadeTrigger(null)}}
                 >
               <div
                 className="card-tile"
               >
-                {showAnswer !== index && (<h4 className="card-title">{card.question}</h4>
-              )}
-              {showAnswer === index && (<p className="card-answer" style={{paddingTop: '3.5vh'}}>{card.answer}</p>
+                {showAnswer !== index && (<Fade in={fadeTrigger !== index} timeout={700}><h4 className="card-title">{card.question}</h4></Fade>)}
+                {showAnswer === index && (<Fade in={fadeTrigger === index} timeout={700}><p className="card-answer" style={{paddingTop: '2.5vh'}}>{card.answer}</p></Fade>
               )}
               
               </div>

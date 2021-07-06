@@ -4,6 +4,7 @@
     flex: 0 1 calc(33% - 0.5em);
     background-color: aliceblue;
     color:rgb(49, 49, 49);
+    border-radius: 2px;
     justify-content: space-around;
     text-align: center;
     align-items: center;
@@ -49,6 +50,10 @@
 
     .cards{
         flex: 0 1 calc(100% - 1em);
+    }
+
+    .single-card { 
+        flex-direction: column;
     }
     
 }

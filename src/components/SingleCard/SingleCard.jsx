@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import UpdateCard from '../UpdateCard/UpdateCard'
+import { DeleteCard } from '../DeleteCard/DeleteCard'
+import { Fade} from '@material-ui/core'
 import "./Singlecard.css"
 
 
@@ -25,7 +27,7 @@ export const SingleCard = (props) => {
             }
         }
         getCard();
-    }, [props.cardId])
+    }, [card, props.cardId])
 
     return (
       <div className='card-body' onClick={() => {
@@ -33,14 +35,18 @@ export const SingleCard = (props) => {
           setAnswerVisible(!answerVisible)
       }}>
         {questionVisible ? (
-          <div className="card">
-            <h3>{card.question}</h3>
-          </div>
+          <Fade in={questionVisible} timeout={700}>
+            <div className="card">
+              <h3>{card.question}</h3>
+            </div>
+          </Fade>
         ) : null}
         {answerVisible ? (
-          <div className="card">
-            <h3>{card.answer}</h3>
-          </div>
+          <Fade in={answerVisible} timeout={700}>
+            <div className="card">
+              <h3>{card.answer}</h3>
+            </div>
+          </Fade>
         ) : null}
         <div className='card-options'>
           <div className="index">
@@ -51,6 +57,7 @@ export const SingleCard = (props) => {
           <div> 
             <button className="edit-btn" onClick={() => setUpdateVisible(true)}>Edit card
             </button>
+            <button className='delete-btn' onClick={() => DeleteCard(props.categoryId, props.cardId)}>DEL</button>
           </div>
         </div>
         <div>

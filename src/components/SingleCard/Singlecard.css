@@ -4,7 +4,7 @@
     color: rgb(49, 49, 49);
     background-color: aliceblue;
     min-height: 25vh;
-    min-width: 50vh;
+    min-width: 55vh;
     margin: 0 2vw;
     justify-content: center;
     align-items: center;
@@ -25,4 +25,19 @@
     font-size: 1em;
     margin-top: 1vh;
     padding-top: 1vh;
+}
+
+.delete-btn { 
+    background-color: red;
+    color: aliceblue;
+    border: 0;
+    border-radius: 2px;
+
+}
+
+
+@media screen and (max-width: 1000px) {
+    .card-body { 
+        margin-top: 1vh;
+    }
 }

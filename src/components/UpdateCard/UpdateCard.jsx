@@ -15,7 +15,7 @@ const UpdateCard = (props) => {
             try { 
                 const response = await axios.put(`http://127.0.0.1:8000/cards_category/${props.categoryId}/${props.cardId}/`, values);
             } catch (error) { 
-                alert('error')
+                alert(error)
                 return
             }
             alert(` card has updated`)
