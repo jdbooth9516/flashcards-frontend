@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { SingleCard } from '../SingleCard/SingleCard';
 import React, {useState, useEffect}from 'react';
+import ReactModal from 'react-modal';
 import { Fade } from '@material-ui/core';
 import "./cards.css"
 
@@ -14,6 +15,7 @@ export default function Cards(props) {
     const [fadeTrigger, setFadeTrigger] = useState(null)
     const [collectionIndex, setIndex] = useState(null)
     const [update, setUpdate] = useState(false)
+    const [open, setOpen] = useState(false)
      
     useEffect(() => {
         async function getData() {
@@ -42,7 +44,7 @@ export default function Cards(props) {
                 onClick={() => {
                   setVisible(false);
                   setSelected(card.id);
-                  setSingleVisible(true);
+                  setOpen(true);
                   setIndex(index + 1);
                 }}
                 onMouseEnter={() => {setShowAnswer(index); setFadeTrigger(index)}}
@@ -60,9 +62,16 @@ export default function Cards(props) {
             ))}
           </div>
         ) : null}
-        <div className='single-card'>
+        <div claseName="single-body">
+          <ReactModal
+            isOpen = {open}
+            className="big-Modal"
+            overlayClassName="Overlay"
+          >
+          <button className="del-btn singleModal-btn" onClick={() => {setOpen(false); setVisible(true)}}>X</button>
+          <div className='single-card'>
           <div>
-            {singleVisible == true && collectionIndex != 1 && (
+            {open == true && collectionIndex != 1 && (
             <button className='index-btn'
               onClick={() => {
                 setIndex(collectionIndex - 1);
@@ -73,7 +82,7 @@ export default function Cards(props) {
             ) }
           </div>
           <div>
-          {singleVisible ? (
+          {open ? (
             <SingleCard
               category={props.category}
               categoryId={props.categoryId}
@@ -85,7 +94,7 @@ export default function Cards(props) {
           ) : null}
         </div>
         <div>
-          {singleVisible == true && collectionIndex != cards.length &&(
+          {open == true && collectionIndex != cards.length &&(
           <button className='index-btn'
             onClick={() => {
               // need to make this into conditional that will loop
@@ -96,19 +105,9 @@ export default function Cards(props) {
           </button>
           )}
           </div>
-          {singleVisible ? (
-            <div>
-              <button className="del-btn"
-                // need to make this into conditional that will loop
-                onClick={() => {
-                  setVisible(true);
-                  setSingleVisible(false);
-                }}
-              >
-                X
-              </button>
-            </div>
-          ) : null}
+           
+          </div>
+        </ReactModal>
         </div>
       </div>
     );

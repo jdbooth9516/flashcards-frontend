@@ -26,6 +26,7 @@ export const SingleCard = (props) => {
   }, [props.cardId]);
 
   return (
+    <div>
     <div
       className="card-body"
       onClick={() => {
@@ -71,5 +72,6 @@ export const SingleCard = (props) => {
         </div>
       </div>
     </div>
+    </div> 
   );
 };

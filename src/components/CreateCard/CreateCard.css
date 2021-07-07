@@ -9,10 +9,9 @@ input {
     min-height: fit-content;
     min-width: auto;
     color: aliceblue;
-    background-color: rgba(143, 143, 143, 0.37);
+    background-color: rgba(54, 54, 54, 0.678);
     border-radius: 3px;
     box-shadow: rgb(0, 0, 0) 0 0 .5em 0;
-    z-index: 9000;
 }
 .Overlay{
     position: fixed;
@@ -21,7 +20,6 @@ input {
     right:0; 
     left:0;
     background-color: rgba(88, 88, 88, 0.692);
-    z-index: 8000;
 }
 
 
