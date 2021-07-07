@@ -54,7 +54,7 @@
 .index-btn  {
     border: 0;
     color: aliceblue;
-    background-color: rgb(36,36,36);
+    background-color: rgba(97, 97, 97, 0);
     margin-top: 12vh;
     font-size: 1em;
 }
