@@ -30,7 +30,7 @@ const UpdateCard = (props) => {
 
     return (
       <div>
-        <button onClick={() => setOpen(true)}>Edit Card</button>
+        <button className="edit-card-btn"onClick={() => setOpen(true)}>Edit Card</button>
         <ReactModal
           isOpen={open}
           className="Modal"

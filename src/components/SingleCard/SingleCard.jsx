@@ -54,14 +54,14 @@ export const SingleCard = (props) => {
           </p>
         </div>
         <div>
-    
           <UpdateCard
             categoryId={props.categoryId}
             cardId={props.cardId}
             questionVisible={setQuestionVisible}
             update={props.update}
           />
-      
+        </div>
+        <div>
           <button
             className="delete-btn"
             onClick={() => DeleteCard(props.categoryId, props.cardId, props.category)}
