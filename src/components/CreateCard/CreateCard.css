@@ -4,7 +4,7 @@ input {
 
 .Modal { 
     position: absolute;
-    top: 35vh;
+    top: 40vh;
     left: 35vw;
     min-height: fit-content;
     min-width: auto;
@@ -20,7 +20,7 @@ input {
     bottom: 0; 
     right:0; 
     left:0;
-    background-color: rgba(44, 44, 44, 0.158);
+    background-color: rgba(88, 88, 88, 0.692);
     z-index: 8000;
 }
 

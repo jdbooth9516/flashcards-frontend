@@ -1,18 +1,36 @@
 .form-container { 
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: center;
+}
+
+.edit-form-body { 
+    display: flex;
+    flex-direction: column;
+    margin: 1vh 1vw;
+}
+
+.edit-card-title { 
+    margin: 1vh 20% 1vh 25%; 
 }
 
 .edit-form { 
     margin: .5vh 0;
+   
+}
+
+.editModal-btn { 
+    margin: .5vh .5vw 0 auto;
+    box-shadow: rgb(22, 22, 22) 0 0 .5em 0
 }
 
 .edit-form-btn { 
     border: 0;
-    color: rgb(13, 212, 39);
-    background-color: aliceblue;
-    font-size: 1em;
-    margin: .5vh 0;
-    padding: .5vh 0;
+    background-color: greenyellow;
+    min-height: 3vh;
+    min-width: 5vw;
+    max-width: 10vw;
+    margin: 2vh 0 2vh 4vw;
+    border-radius: 5px;
+    box-shadow: rgb(22, 22, 22) 0 0 .5em 0;
 }

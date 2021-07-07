@@ -8,8 +8,7 @@ import "./Singlecard.css";
 export const SingleCard = (props) => {
   const [card, setCard] = useState({});
   const [questionVisible, setQuestionVisible] = useState(true);
-  const [answerVisible, setAnswerVisible] = useState(false);
-  const [updateVisible, setUpdateVisible] = useState(false);
+  const [answerVisible, setAnswerVisible] = useState(false)
 
   useEffect(() => {
     async function getCard() {
@@ -24,7 +23,7 @@ export const SingleCard = (props) => {
       }
     }
     getCard();
-  }, [props.cardId, updateVisible]);
+  }, [props.cardId]);
 
   return (
     <div
@@ -55,16 +54,14 @@ export const SingleCard = (props) => {
           </p>
         </div>
         <div>
-          <button
-            className="edit-btn"
-            onClick={() => {
-              setUpdateVisible(true);
-              setAnswerVisible(false);
-              setQuestionVisible(false);
-            }}
-          >
-            Edit card
-          </button>
+    
+          <UpdateCard
+            categoryId={props.categoryId}
+            cardId={props.cardId}
+            questionVisible={setQuestionVisible}
+            update={props.update}
+          />
+      
           <button
             className="delete-btn"
             onClick={() => DeleteCard(props.categoryId, props.cardId, props.category)}
@@ -72,17 +69,6 @@ export const SingleCard = (props) => {
             DEL
           </button>
         </div>
-      </div>
-      <div>
-        {updateVisible ? (
-          <UpdateCard
-            categoryId={props.categoryId}
-            cardId={props.cardId}
-            updateVisible={setUpdateVisible}
-            questionVisible={setQuestionVisible}
-            update={props.update}
-          />
-        ) : null}
       </div>
     </div>
   );
