@@ -1,9 +1,8 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import { CreateCategory } from '../CreateCategory/CreateCategory';
 import './Navbar.css'
 
 export default function Navbar(props) {
-    const [visible, setVisible] = useState(false);
 
     return (
       <div className="navbar-inner">
@@ -11,8 +10,7 @@ export default function Navbar(props) {
           <h1> FlashCards </h1>
         </div>
         <div className="buttons">
-          <button className="nav-btn" onClick={() => {setVisible(true)}}>Create Categories</button>
-          {visible ? <CreateCategory /> : null}
+          <CreateCategory /> 
         </div>
         <div></div>
       </div>

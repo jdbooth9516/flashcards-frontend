@@ -10,25 +10,22 @@ export default function Categories() {
   const [createVisible, setCreateVisible] = useState(false);
   const [active, setActive] = useState(null);
   const [id, setId] = useState(0);
-  
 
   useEffect(() => {
     async function getData() {
       const response = await axios.get("http://127.0.0.1:8000/categories/");
       setCategories(response.data);
-      
     }
     getData();
   }, [createVisible]);
 
-  function hideCreate() { 
-    setCreateVisible(false)
-    setCardsVisible(false)
+  function hideCreate() {
+    setCreateVisible(false);
+    setCardsVisible(false);
     setTimeout(() => {
-      setCardsVisible(true)
+      setCardsVisible(true);
     }, 400);
   }
-
 
   return (
     <div className="main-container">
@@ -62,12 +59,15 @@ export default function Categories() {
       </div>
       <div className="card-container">
         {cardsVisible ? (
-          <Cards category={categories[id - 1]} categoryId={id} total={categories[id - 1].total_cards}/>
+          <Cards
+            category={categories[id - 1]}
+            categoryId={id}
+            total={categories[id - 1].total_cards}
+          />
         ) : null}
       </div>
       <div className="createcard-ctn">
-        <button className="CC-btn" onClick={() => setCreateVisible(true)}>Create Card</button>
-        {createVisible ? <CreateCard categories={categories} hideCreate={hideCreate}/> : null}
+          <CreateCard categories={categories} hideCreate={hideCreate}/>
       </div>
     </div>
   );
