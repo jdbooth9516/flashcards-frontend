@@ -9,8 +9,6 @@ export default function Cards(props) {
 
     const [cards, setCards] = useState([]);
     const [visible, setVisible] = useState(true)
-    const [singleVisible, setSingleVisible] = useState(false)
-    const [selectedCard, setSelected] = useState(0)
     const [showAnswer, setShowAnswer] = useState(null)
     const [fadeTrigger, setFadeTrigger] = useState(null)
     const [collectionIndex, setIndex] = useState(null)
@@ -26,11 +24,11 @@ export default function Cards(props) {
     }, [props.categoryId, update]);
 
     function updateCards() { 
-      setUpdate(true);
-      setSingleVisible(false);
+      setUpdate(true); 
+      setOpen(false) 
       setTimeout(() => {
         setUpdate(false);
-        setSingleVisible(true);
+        setOpen(true);
       }, 200);
     }
 
@@ -43,7 +41,6 @@ export default function Cards(props) {
               
                 onClick={() => {
                   setVisible(false);
-                  setSelected(card.id);
                   setOpen(true);
                   setIndex(index + 1);
                 }}

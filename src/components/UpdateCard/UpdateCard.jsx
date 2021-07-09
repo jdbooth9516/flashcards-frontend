@@ -25,7 +25,8 @@ const UpdateCard = (props) => {
         }
         updateCardInDatabase(values);
         props.questionVisible(true)
-        props.update()
+        setOpen(false);
+        props.update();
     }
 
     return (
