@@ -2,9 +2,9 @@
 .big-Modal { 
     position: absolute;
     top: 25vh;
-    left: 15vw;
-    min-height: 50vh;
-    min-width: 70vw;
+    left: 25vw;
+    min-height: 40vh;
+    min-width: 45vw;
     color: aliceblue;
     background-color: rgba(110, 110, 110, 0.37);
     border-radius: 3px;
@@ -48,7 +48,7 @@
     flex-direction: row;
     justify-content: center;
     align-content: center;
-    padding: 10vh 0 0 0;
+    padding: 5vh 0 0 0;
 }
 
 .index-btn  {

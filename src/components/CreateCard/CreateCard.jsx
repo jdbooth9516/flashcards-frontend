@@ -23,7 +23,7 @@ const CreateCard = (props) => {
       }
     };
       addCardToDatabase(values);
-      props.openModal = false;
+      setOpen(false);
       props.hideCreate();
     }
 
