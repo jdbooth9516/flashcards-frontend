@@ -1,3 +1,10 @@
+# flashcards 
+fullstack application that uses 
+Django, Rest Framework and MySql on the backend 
+and React, bootstrap and react strap on the front end. 
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
